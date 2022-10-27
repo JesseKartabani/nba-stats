@@ -6,7 +6,16 @@ import LeagueLeaders from "./components/LeagueLeaders";
 export default function App() {
   return (
     <SafeAreaProvider style={styles.container}>
-      <LeagueLeaders />
+      <LeagueLeaders rank="0" />
+      <LeagueLeaders rank="1" />
+      <LeagueLeaders rank="2" />
+      <LeagueLeaders rank="3" />
+      <LeagueLeaders rank="4" />
+      <LeagueLeaders rank="5" />
+      <LeagueLeaders rank="6" />
+      <LeagueLeaders rank="7" />
+      <LeagueLeaders rank="8" />
+      <LeagueLeaders rank="9" />
     </SafeAreaProvider>
   );
 }

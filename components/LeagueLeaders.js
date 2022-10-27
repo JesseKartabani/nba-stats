@@ -38,26 +38,26 @@ const LeagueLeaders = ({ rank }) => {
       >
         {/* player name */}
         <View style={styles.tableColumn}>
-          <Text>{stats[2]}</Text>
+          <Text style={styles.playerNames}>{stats[2]}</Text>
           <Text></Text>
         </View>
 
         {/* players total points in season */}
         <View style={styles.tableColumn}>
-          <Text>PTS</Text>
-          <Text>{stats[23]}</Text>
+          <Text style={styles.statHeading}>PTS</Text>
+          <Text style={styles.statTxt}>{stats[23]}</Text>
         </View>
 
         {/* player total assists */}
         <View style={styles.tableColumn}>
-          <Text>AST</Text>
-          <Text>{stats[18]}</Text>
+          <Text style={styles.statHeading}>AST</Text>
+          <Text style={styles.statTxt}>{stats[18]}</Text>
         </View>
 
         {/* player total rebounds */}
         <View style={styles.tableColumn}>
-          <Text>REB</Text>
-          <Text>{stats[17]}</Text>
+          <Text style={styles.statHeading}>REB</Text>
+          <Text style={styles.statTxt}>{stats[17]}</Text>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -67,6 +67,38 @@ const LeagueLeaders = ({ rank }) => {
 export default LeagueLeaders;
 
 const styles = StyleSheet.create({
+  playerNames: {
+    fontWeight: "600",
+    ...Platform.select({
+      ios: {},
+      android: {},
+      default: {
+        fontSize: "125%",
+      },
+    }),
+  },
+
+  statHeading: {
+    textDecorationLine: "underline",
+    fontWeight: "500",
+    ...Platform.select({
+      ios: {},
+      android: {},
+      default: {
+        fontSize: "105%",
+      },
+    }),
+  },
+
+  statTxt: {
+    marginTop: 8,
+    ...Platform.select({
+      ios: {},
+      android: {},
+      default: {},
+    }),
+  },
+
   tableContainer: {
     borderWidth: 1,
     borderRadius: 10,

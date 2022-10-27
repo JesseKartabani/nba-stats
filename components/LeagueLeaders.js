@@ -1,9 +1,16 @@
-import { SafeAreaView, StyleSheet, Text, View, ScrollView } from "react-native";
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+  ScrollView,
+  Platform,
+} from "react-native";
 import React, { useEffect, useState } from "react";
 
 const LeagueLeaders = ({ rank }) => {
-  const [stats, setStats] = useState([]);
   // fetch data
+  const [stats, setStats] = useState([]);
   const getLeagueLeaders = async () => {
     try {
       const response = await fetch(
@@ -24,27 +31,31 @@ const LeagueLeaders = ({ rank }) => {
 
   return (
     <SafeAreaView>
-      <ScrollView centerContent={true} horizontal={true}>
+      <ScrollView
+        centerContent={true}
+        horizontal={true}
+        style={styles.tableContainer}
+      >
         {/* player name */}
-        <View>
+        <View style={styles.tableColumn}>
           <Text>{stats[2]}</Text>
           <Text></Text>
         </View>
 
         {/* players total points in season */}
-        <View>
+        <View style={styles.tableColumn}>
           <Text>PTS</Text>
           <Text>{stats[23]}</Text>
         </View>
 
         {/* player total assists */}
-        <View>
+        <View style={styles.tableColumn}>
           <Text>AST</Text>
           <Text>{stats[18]}</Text>
         </View>
 
         {/* player total rebounds */}
-        <View>
+        <View style={styles.tableColumn}>
           <Text>REB</Text>
           <Text>{stats[17]}</Text>
         </View>
@@ -55,4 +66,33 @@ const LeagueLeaders = ({ rank }) => {
 
 export default LeagueLeaders;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  tableContainer: {
+    borderWidth: 1,
+    borderRadius: 10,
+    marginTop: 10,
+    marginLeft: 30,
+    marginRight: 30,
+    ...Platform.select({
+      ios: {},
+      android: {},
+      default: {
+        marginLeft: 200,
+        marginRight: 200,
+      },
+    }),
+  },
+
+  tableColumn: {
+    marginLeft: 25,
+    marginTop: 5,
+    marginBottom: 5,
+    ...Platform.select({
+      ios: {},
+      android: {},
+      default: {
+        marginLeft: 50,
+      },
+    }),
+  },
+});

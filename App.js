@@ -1,11 +1,13 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import Banner from "./components/Banner";
 import LeagueLeaders from "./components/LeagueLeaders";
 
 export default function App() {
   return (
     <SafeAreaProvider style={styles.container}>
+      <Banner />
       <LeagueLeaders rank="0" />
       <LeagueLeaders rank="1" />
       <LeagueLeaders rank="2" />

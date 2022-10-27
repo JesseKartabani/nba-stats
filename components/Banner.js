@@ -17,6 +17,7 @@ const Banner = () => {
           uri: "https://i.imgur.com/hMyneZs.png",
         }}
       />
+      <Text style={styles.heading}>2020-2021 Regular Season Top Scorers</Text>
     </SafeAreaView>
   );
 };
@@ -24,6 +25,22 @@ const Banner = () => {
 export default Banner;
 
 const styles = StyleSheet.create({
+  heading: {
+    fontWeight: "700",
+    alignSelf: "center",
+    fontSize: "16%",
+    marginTop: 1,
+    marginBottom: 1,
+    ...Platform.select({
+      ios: {},
+      android: {},
+      default: {
+        fontSize: "135%",
+        marginTop: 10,
+        marginBottom: 10,
+      },
+    }),
+  },
   banner: {
     width: 220,
     height: 100,

@@ -1,4 +1,4 @@
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View, ScrollView } from "react-native";
 import React, { useEffect, useState } from "react";
 
 const LeagueLeaders = ({ rank }) => {
@@ -11,7 +11,7 @@ const LeagueLeaders = ({ rank }) => {
       );
       const json = await response.json();
       const data = json.resultSet.rowSet[rank];
-      console.log(data);
+      //console.log(data);
       setStats(data);
     } catch (error) {
       console.error(error);
@@ -24,7 +24,31 @@ const LeagueLeaders = ({ rank }) => {
 
   return (
     <SafeAreaView>
-      <Text>{stats[2]}</Text>
+      <ScrollView centerContent={true} horizontal={true}>
+        {/* player name */}
+        <View>
+          <Text>{stats[2]}</Text>
+          <Text></Text>
+        </View>
+
+        {/* players total points in season */}
+        <View>
+          <Text>PTS</Text>
+          <Text>{stats[23]}</Text>
+        </View>
+
+        {/* player total assists */}
+        <View>
+          <Text>AST</Text>
+          <Text>{stats[18]}</Text>
+        </View>
+
+        {/* player total rebounds */}
+        <View>
+          <Text>REB</Text>
+          <Text>{stats[17]}</Text>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };

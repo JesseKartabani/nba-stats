@@ -134,6 +134,7 @@ const styles = StyleSheet.create({
   statTxt: {
     marginTop: 8,
     color: "white",
+    marginRight: 10,
     ...Platform.select({
       ios: {},
       android: {},

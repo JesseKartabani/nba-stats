@@ -59,6 +59,42 @@ const LeagueLeaders = ({ rank }) => {
           <Text style={styles.statHeading}>REB</Text>
           <Text style={styles.statTxt}>{stats[17]}</Text>
         </View>
+
+        {/* player total field goal percentage rounded to 2 decimal places */}
+        <View style={styles.tableColumn}>
+          <Text style={styles.statHeading}>FG%</Text>
+          <Text style={styles.statTxt}>{stats[8]?.toFixed(2)}</Text>
+        </View>
+
+        {/* player total 3 point shooting percentage rounded to 2 decimal places */}
+        <View style={styles.tableColumn}>
+          <Text style={styles.statHeading}>3PT%</Text>
+          <Text style={styles.statTxt}>{stats[11]?.toFixed(2)}</Text>
+        </View>
+
+        {/* player total free throw percentage rounded to 2 decimal places */}
+        <View style={styles.tableColumn}>
+          <Text style={styles.statHeading}>FT%</Text>
+          <Text style={styles.statTxt}>{stats[14]?.toFixed(2)}</Text>
+        </View>
+
+        {/* player total steals */}
+        <View style={styles.tableColumn}>
+          <Text style={styles.statHeading}>STL</Text>
+          <Text style={styles.statTxt}>{stats[19]}</Text>
+        </View>
+
+        {/* player total blocks */}
+        <View style={styles.tableColumn}>
+          <Text style={styles.statHeading}>BLK</Text>
+          <Text style={styles.statTxt}>{stats[20]}</Text>
+        </View>
+
+        {/* player total minutes played */}
+        <View style={styles.tableColumn}>
+          <Text style={styles.statHeading}>MIN</Text>
+          <Text style={styles.statTxt}>{stats[5]}</Text>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );

@@ -13,13 +13,27 @@ const NavOptions = () => {
   const navigation = useNavigation();
   return (
     <SafeAreaView>
-      <TouchableOpacity onPress={() => navigation.navigate("TestScreen")}>
-        <Icon name="arrowright" color="white" type="antdesign" />
-      </TouchableOpacity>
+      <View style={styles.arrowContainer}>
+        {/* Navigate back */}
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Icon name="arrowleft" color="white" type="antdesign" />
+        </TouchableOpacity>
+
+        {/* Navigate forward */}
+        <TouchableOpacity onPress={() => navigation.navigate("TestScreen")}>
+          <Icon name="arrowright" color="white" type="antdesign" />
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 };
 
 export default NavOptions;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  arrowContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});

@@ -1,36 +1,35 @@
-import { ImageBackground, ScrollView, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import Banner from "./components/Banner";
-import LeagueLeaders from "./components/LeagueLeaders";
+import "react-native-gesture-handler";
+import { NavigationContainer } from "@react-navigation/native";
+import LeagueLeaderScreen from "./screens/LeagueLeaderScreen";
+import TestScreen from "./screens/TestScreen";
+import { createStackNavigator } from "@react-navigation/stack";
 
 export default function App() {
+  const Stack = createStackNavigator();
   return (
-    <SafeAreaProvider style={styles.container}>
-      <ImageBackground
-        style={styles.backgroundImg}
-        source={{ uri: "https://i.imgur.com/Fw7YF2Q.jpg" }}
-      >
-        <Banner />
-        <ScrollView bounces={false}>
-          <LeagueLeaders rank="0" />
-          <LeagueLeaders rank="1" />
-          <LeagueLeaders rank="2" />
-          <LeagueLeaders rank="3" />
-          <LeagueLeaders rank="4" />
-          <LeagueLeaders rank="5" />
-          <LeagueLeaders rank="6" />
-          <LeagueLeaders rank="7" />
-          <LeagueLeaders rank="8" />
-          <LeagueLeaders rank="9" />
-        </ScrollView>
-      </ImageBackground>
-    </SafeAreaProvider>
+    <NavigationContainer>
+      <SafeAreaProvider style={styles.container}>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="LeagueLeaderScreen"
+            component={LeagueLeaderScreen}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="TestScreen"
+            component={TestScreen}
+            options={{
+              headerShown: false,
+            }}
+          />
+        </Stack.Navigator>
+      </SafeAreaProvider>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  backgroundImg: {
-    height: "100%",
-    width: "100%",
-  },
-});
+const styles = StyleSheet.create({});

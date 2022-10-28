@@ -3,7 +3,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
 import LeagueLeaderScreen from "./screens/LeagueLeaderScreen";
-import TestScreen from "./screens/TestScreen";
+import PlayerCareerStatsScreen from "./screens/PlayerCareerStatsScreen";
 import { createStackNavigator } from "@react-navigation/stack";
 
 export default function App() {
@@ -20,8 +20,8 @@ export default function App() {
             }}
           />
           <Stack.Screen
-            name="Test Screen"
-            component={TestScreen}
+            name="Player Career Stats"
+            component={PlayerCareerStatsScreen}
             options={{
               headerShown: false,
             }}

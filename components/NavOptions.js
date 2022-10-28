@@ -20,7 +20,9 @@ const NavOptions = () => {
         </TouchableOpacity>
 
         {/* Navigate forward */}
-        <TouchableOpacity onPress={() => navigation.navigate("Test Screen")}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Player Career Stats")}
+        >
           <Icon name="arrowright" color="white" type="antdesign" />
         </TouchableOpacity>
       </View>

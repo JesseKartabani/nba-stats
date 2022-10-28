@@ -8,8 +8,9 @@ import {
 import React from "react";
 import NavOptions from "../components/NavOptions";
 import Banner from "../components/Banner";
+import PlayerCareerStats from "../components/PlayerCareerStats";
 
-const TestScreen = () => {
+const PlayerCareerStatsScreen = () => {
   return (
     <ImageBackground
       style={styles.backgroundImg}
@@ -17,11 +18,12 @@ const TestScreen = () => {
     >
       <Banner />
       <NavOptions />
+      <PlayerCareerStats />
     </ImageBackground>
   );
 };
 
-export default TestScreen;
+export default PlayerCareerStatsScreen;
 
 const styles = StyleSheet.create({
   backgroundImg: {

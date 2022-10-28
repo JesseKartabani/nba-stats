@@ -1,7 +1,7 @@
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const Test = () => {
+const PlayerCareerStats = () => {
   return (
     <SafeAreaView>
       <Text>Test</Text>
@@ -9,6 +9,6 @@ const Test = () => {
   );
 };
 
-export default Test;
+export default PlayerCareerStats;
 
 const styles = StyleSheet.create({});

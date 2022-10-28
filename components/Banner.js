@@ -25,8 +25,9 @@ const Banner = () => {
 
       {/* Heading changes depending on screen */}
       <Text style={styles.heading}>
-        {route.name != "Test Screen" && "2020-2021 Regular Season Top Scorers"}
-        {route.name == "Test Screen" && "WoRK"}
+        {route.name != "Player Career Stats" &&
+          "2020-2021 Regular Season Top Scorers"}
+        {route.name == "Player Career Stats" && "Player Career Stats"}
       </Text>
     </SafeAreaView>
   );

@@ -94,7 +94,7 @@ const LeagueLeaders = ({ rank }) => {
           <Text style={styles.statTxt}>{stats[11]?.toFixed(2)}</Text>
         </View>
 
-        {/* player total free throw percentage rounded to 2 decimal places */}
+        {/* player total free throw % rounded to 2 decimal places */}
         <View style={styles.tableColumn}>
           <Text style={styles.statHeading}>FT%</Text>
           <Text style={styles.statTxt}>{stats[14]?.toFixed(2)}</Text>
@@ -112,10 +112,22 @@ const LeagueLeaders = ({ rank }) => {
           <Text style={styles.statTxt}>{stats[20]}</Text>
         </View>
 
+        {/* player total turnovers */}
+        <View style={styles.tableColumn}>
+          <Text style={styles.statHeading}>TO</Text>
+          <Text style={styles.statTxt}>{stats[21]}</Text>
+        </View>
+
         {/* player total minutes played */}
         <View style={styles.tableColumn}>
           <Text style={styles.statHeading}>MIN</Text>
           <Text style={styles.statTxt}>{stats[5]}</Text>
+        </View>
+
+        {/* players team*/}
+        <View style={styles.tableColumn}>
+          <Text style={styles.statHeading}>TEAM</Text>
+          <Text style={styles.statTxt}>{stats[3]}</Text>
         </View>
       </ScrollView>
     </SafeAreaView>

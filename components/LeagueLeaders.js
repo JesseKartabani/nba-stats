@@ -69,6 +69,7 @@ export default LeagueLeaders;
 const styles = StyleSheet.create({
   playerNames: {
     fontWeight: "600",
+    color: "white",
     ...Platform.select({
       ios: {},
       android: {},
@@ -81,6 +82,7 @@ const styles = StyleSheet.create({
   statHeading: {
     textDecorationLine: "underline",
     fontWeight: "500",
+    color: "white",
     ...Platform.select({
       ios: {},
       android: {},
@@ -92,6 +94,7 @@ const styles = StyleSheet.create({
 
   statTxt: {
     marginTop: 8,
+    color: "white",
     ...Platform.select({
       ios: {},
       android: {},
@@ -102,9 +105,11 @@ const styles = StyleSheet.create({
   tableContainer: {
     borderWidth: 1,
     borderRadius: 10,
+    borderColor: "rgba(255, 255, 255, 0.7)",
     marginTop: 10,
     marginLeft: 30,
     marginRight: 30,
+    backgroundColor: "rgba(0, 0, 0, 0.7)",
     ...Platform.select({
       ios: {},
       android: {},

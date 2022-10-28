@@ -1,10 +1,4 @@
-import {
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { SafeAreaView, StyleSheet, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { Icon } from "@rneui/base";
@@ -15,12 +9,16 @@ const NavOptions = () => {
     <SafeAreaView>
       <View style={styles.arrowContainer}>
         {/* Navigate back */}
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+        <TouchableOpacity
+          style={styles.arrowLeft}
+          onPress={() => navigation.goBack()}
+        >
           <Icon name="arrowleft" color="white" type="antdesign" />
         </TouchableOpacity>
 
         {/* Navigate forward */}
         <TouchableOpacity
+          style={styles.arrowRight}
           onPress={() => navigation.navigate("Player Career Stats")}
         >
           <Icon name="arrowright" color="white" type="antdesign" />
@@ -37,5 +35,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
+  },
+
+  arrowLeft: {
+    marginRight: 40,
   },
 });

@@ -8,7 +8,7 @@ const NavOptions = () => {
   return (
     <SafeAreaView>
       <View style={styles.arrowContainer}>
-        {/* Navigate back */}
+        {/* Navigate back arrow */}
         <TouchableOpacity
           style={styles.arrowLeft}
           onPress={() => navigation.goBack()}
@@ -16,7 +16,7 @@ const NavOptions = () => {
           <Icon name="arrowleft" color="white" type="antdesign" />
         </TouchableOpacity>
 
-        {/* Navigate forward */}
+        {/* Navigate forward arrow */}
         <TouchableOpacity
           style={styles.arrowRight}
           onPress={() => navigation.navigate("Player Career Stats")}

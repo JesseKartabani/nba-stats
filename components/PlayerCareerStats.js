@@ -3,7 +3,7 @@ import { React, useState, useEffect } from "react";
 
 const PlayerCareerStats = () => {
   {
-    /* Endpoint isnt working */
+    /* TODO: Endpoint isnt working */
   }
   const [stats, setStats] = useState([]);
   const getPlayerCareerStats = async () => {

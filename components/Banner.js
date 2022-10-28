@@ -7,17 +7,27 @@ import {
   View,
 } from "react-native";
 import React from "react";
+import { useRoute } from "@react-navigation/native";
 
 const Banner = () => {
+  // Gets the name of the screen we are on route.name
+  const route = useRoute();
+
   return (
     <SafeAreaView>
+      {/* Banner image */}
       <Image
         style={styles.banner}
         source={{
           uri: "https://i.imgur.com/hMyneZs.png",
         }}
       />
-      <Text style={styles.heading}>2020-2021 Regular Season Top Scorers</Text>
+
+      {/* Heading changes depending on screen */}
+      <Text style={styles.heading}>
+        {route.name != "Test Screen" && "2020-2021 Regular Season Top Scorers"}
+        {route.name == "Test Screen" && "WoRK"}
+      </Text>
     </SafeAreaView>
   );
 };

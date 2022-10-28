@@ -1,5 +1,8 @@
 # NBA Stats
 
+## API
+https://github.com/swar/nba_api
+
 ## iOS Demo
 https://user-images.githubusercontent.com/69617120/198601606-ee0d3087-5a73-4ad3-897f-452d0ae3ebd7.MOV
 

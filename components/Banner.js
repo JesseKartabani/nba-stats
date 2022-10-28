@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
     fontSize: "16%",
     marginTop: 1,
     marginBottom: 1,
+    color: "white",
     ...Platform.select({
       ios: {},
       android: {},

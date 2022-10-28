@@ -29,6 +29,9 @@ const LeagueLeaders = ({ rank }) => {
     getLeagueLeaders();
   }, []);
 
+  // For displaying rank to user
+  const rankTxt = parseInt(rank) + 1;
+
   return (
     <SafeAreaView>
       <ScrollView
@@ -36,10 +39,10 @@ const LeagueLeaders = ({ rank }) => {
         horizontal={true}
         style={styles.tableContainer}
       >
-        {/* player name */}
+        {/* player name and rank */}
         <View style={styles.tableColumn}>
           <Text style={styles.playerNames}>{stats[2]}</Text>
-          <Text></Text>
+          <Text style={styles.statTxt}>{rankTxt}</Text>
         </View>
 
         {/* players total points in season */}

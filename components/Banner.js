@@ -1,11 +1,4 @@
-import {
-  Image,
-  Platform,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { Image, Platform, SafeAreaView, StyleSheet, Text } from "react-native";
 import React from "react";
 import { useRoute } from "@react-navigation/native";
 

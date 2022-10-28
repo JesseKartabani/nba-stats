@@ -154,11 +154,6 @@ const styles = StyleSheet.create({
     marginTop: 8,
     color: "white",
     marginRight: 10,
-    ...Platform.select({
-      ios: {},
-      android: {},
-      default: {},
-    }),
   },
 
   tableContainer: {

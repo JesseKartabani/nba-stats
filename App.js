@@ -1,4 +1,3 @@
-import { StyleSheet } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
@@ -10,7 +9,7 @@ export default function App() {
   const Stack = createStackNavigator();
   return (
     <NavigationContainer>
-      <SafeAreaProvider style={styles.container}>
+      <SafeAreaProvider>
         <Stack.Navigator>
           <Stack.Screen
             name="League Leaders"
@@ -31,5 +30,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({});

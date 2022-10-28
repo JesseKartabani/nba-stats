@@ -1,10 +1,4 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  SafeAreaView,
-  ImageBackground,
-} from "react-native";
+import { StyleSheet, ImageBackground } from "react-native";
 import React from "react";
 import NavOptions from "../components/NavOptions";
 import Banner from "../components/Banner";

@@ -1,11 +1,4 @@
-import {
-  ImageBackground,
-  SafeAreaView,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { ImageBackground, ScrollView, StyleSheet } from "react-native";
 import React from "react";
 import Banner from "../components/Banner";
 import LeagueLeaders from "../components/LeagueLeaders";

@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   heading: {
     fontWeight: "700",
     alignSelf: "center",
-    fontSize: "16%",
+    fontSize: "17%",
     marginTop: 1,
     marginBottom: 1,
     color: "white",

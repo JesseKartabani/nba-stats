@@ -20,7 +20,7 @@ const NavOptions = () => {
         </TouchableOpacity>
 
         {/* Navigate forward */}
-        <TouchableOpacity onPress={() => navigation.navigate("TestScreen")}>
+        <TouchableOpacity onPress={() => navigation.navigate("Test Screen")}>
           <Icon name="arrowright" color="white" type="antdesign" />
         </TouchableOpacity>
       </View>

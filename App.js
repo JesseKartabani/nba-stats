@@ -13,14 +13,14 @@ export default function App() {
       <SafeAreaProvider style={styles.container}>
         <Stack.Navigator>
           <Stack.Screen
-            name="LeagueLeaderScreen"
+            name="League Leaders"
             component={LeagueLeaderScreen}
             options={{
               headerShown: false,
             }}
           />
           <Stack.Screen
-            name="TestScreen"
+            name="Test Screen"
             component={TestScreen}
             options={{
               headerShown: false,

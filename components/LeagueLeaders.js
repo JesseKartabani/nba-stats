@@ -25,12 +25,27 @@ const LeagueLeaders = ({ rank }) => {
     }
   };
 
+  // Splits player name into first and last name
+  const [firstName, setFirstName] = useState([]);
+  const [lastName, setLastName] = useState([]);
+
+  function splitPlayerName() {
+    if (stats[2] == undefined) return;
+    const mySplitResult = stats[2].split(" ");
+    setFirstName(mySplitResult[0]);
+    setLastName(mySplitResult[1]);
+  }
+
+  // For displaying rank to user
+  const rankTxt = parseInt(rank) + 1;
+
   useEffect(() => {
     getLeagueLeaders();
   }, []);
 
-  // For displaying rank to user
-  const rankTxt = parseInt(rank) + 1;
+  useEffect(() => {
+    splitPlayerName();
+  }, [stats]);
 
   return (
     <SafeAreaView>
@@ -41,8 +56,12 @@ const LeagueLeaders = ({ rank }) => {
       >
         {/* player name and rank */}
         <View style={styles.tableColumn}>
-          <Text style={styles.playerNames}>{stats[2]}</Text>
-          <Text style={styles.statTxt}>{rankTxt}</Text>
+          <Text style={styles.playerNames}>
+            {rankTxt}. {firstName}
+            {"\n"}
+            {"    "}
+            {lastName}
+          </Text>
         </View>
 
         {/* players total points in season */}

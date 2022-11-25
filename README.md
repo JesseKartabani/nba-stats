@@ -7,6 +7,7 @@ https://github.com/swar/nba_api
 https://user-images.githubusercontent.com/69617120/198601606-ee0d3087-5a73-4ad3-897f-452d0ae3ebd7.MOV
 
 ## Web Demo
+### [LIVE WEBSITE](https://nba-stats-3da74.web.app/)
 ![nbaWebPic](https://user-images.githubusercontent.com/69617120/198601884-84ca3605-a9ac-4718-a7ae-2026c60666bc.PNG)
 
 ## Building

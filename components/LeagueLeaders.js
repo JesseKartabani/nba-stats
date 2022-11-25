@@ -7,46 +7,32 @@ import {
   Platform,
 } from "react-native";
 import React, { useEffect, useState } from "react";
+import { fetchLeagueLeaders } from "../fetchers/stats";
+import { useQuery } from "@tanstack/react-query";
 
 const LeagueLeaders = ({ rank }) => {
-  // fetch data
-  const [stats, setStats] = useState([]);
-  const getLeagueLeaders = async () => {
-    try {
-      const response = await fetch(
-        "https://stats.nba.com/stats/leagueleaders?ActiveFlag=&LeagueID=00&PerMode=Totals&Scope=S&Season=2020-21&SeasonType=Regular+Season&StatCategory=PTS"
-      );
-      const json = await response.json();
-      const data = json.resultSet.rowSet[rank];
-      //console.log(data);
-      setStats(data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  // Splits player name into first and last name
-  const [firstName, setFirstName] = useState([]);
-  const [lastName, setLastName] = useState([]);
-
-  function splitPlayerName() {
-    if (stats[2] == undefined) return;
-    const mySplitResult = stats[2].split(" ");
-    setFirstName(mySplitResult[0]);
-    setLastName(mySplitResult[1]);
-  }
-
   // For displaying rank to user
   const rankTxt = parseInt(rank) + 1;
 
-  useEffect(() => {
-    getLeagueLeaders();
-  }, []);
+  // Gets 2020-2021 regular season top scorers
+  const { isError, isSuccess, isLoading, data, error } = useQuery({
+    queryKey: ["leagueLeaders"],
+    queryFn: () => fetchLeagueLeaders(rank),
+  });
 
-  useEffect(() => {
-    splitPlayerName();
-  }, [stats]);
+  if (isLoading) {
+    console.log("loading");
+    return <Text>Loading...</Text>;
+  }
 
+  if (isError) {
+    console.log(error);
+    return <Text>Error...</Text>;
+  }
+
+  const player = data[rank];
+
+  console.log(player);
   return (
     <SafeAreaView>
       <ScrollView
@@ -57,77 +43,74 @@ const LeagueLeaders = ({ rank }) => {
         {/* player name and rank */}
         <View style={styles.tableColumn}>
           <Text style={styles.playerNames}>
-            {rankTxt}. {firstName}
-            {"\n"}
-            {"    "}
-            {lastName}
+            {rankTxt}. {player[2]}
           </Text>
         </View>
 
         {/* players total points in season */}
         <View style={styles.tableColumn}>
           <Text style={styles.statHeading}>PTS</Text>
-          <Text style={styles.statTxt}>{stats[23]}</Text>
+          <Text style={styles.statTxt}>{player[24]}</Text>
         </View>
 
         {/* player total assists */}
         <View style={styles.tableColumn}>
           <Text style={styles.statHeading}>AST</Text>
-          <Text style={styles.statTxt}>{stats[18]}</Text>
+          <Text style={styles.statTxt}>{player[19]}</Text>
         </View>
 
         {/* player total rebounds */}
         <View style={styles.tableColumn}>
           <Text style={styles.statHeading}>REB</Text>
-          <Text style={styles.statTxt}>{stats[17]}</Text>
+          <Text style={styles.statTxt}>{player[18]}</Text>
         </View>
 
         {/* player total field goal percentage rounded to 2 decimal places */}
         <View style={styles.tableColumn}>
           <Text style={styles.statHeading}>FG%</Text>
-          <Text style={styles.statTxt}>{stats[8]?.toFixed(2)}</Text>
+          <Text style={styles.statTxt}>{player[9]?.toFixed(2)}</Text>
         </View>
 
         {/* player total 3 point shooting percentage rounded to 2 decimal places */}
         <View style={styles.tableColumn}>
           <Text style={styles.statHeading}>3PT%</Text>
-          <Text style={styles.statTxt}>{stats[11]?.toFixed(2)}</Text>
+          <Text style={styles.statTxt}>{player[12]?.toFixed(2)}</Text>
         </View>
 
         {/* player total free throw % rounded to 2 decimal places */}
         <View style={styles.tableColumn}>
           <Text style={styles.statHeading}>FT%</Text>
-          <Text style={styles.statTxt}>{stats[14]?.toFixed(2)}</Text>
+          <Text style={styles.statTxt}>{player[15]?.toFixed(2)}</Text>
         </View>
 
         {/* player total steals */}
         <View style={styles.tableColumn}>
           <Text style={styles.statHeading}>STL</Text>
-          <Text style={styles.statTxt}>{stats[19]}</Text>
+          <Text style={styles.statTxt}>{player[20]}</Text>
         </View>
 
         {/* player total blocks */}
         <View style={styles.tableColumn}>
           <Text style={styles.statHeading}>BLK</Text>
-          <Text style={styles.statTxt}>{stats[20]}</Text>
+          <Text style={styles.statTxt}>{player[21]}</Text>
         </View>
 
         {/* player total turnovers */}
         <View style={styles.tableColumn}>
           <Text style={styles.statHeading}>TO</Text>
-          <Text style={styles.statTxt}>{stats[21]}</Text>
+          <Text style={styles.statTxt}>{player[22]}</Text>
         </View>
 
         {/* player total minutes played */}
         <View style={styles.tableColumn}>
           <Text style={styles.statHeading}>MIN</Text>
-          <Text style={styles.statTxt}>{stats[5]}</Text>
+          <Text style={styles.statTxt}>{player[6]}</Text>
         </View>
 
         {/* players team*/}
         <View style={styles.tableColumn}>
           <Text style={styles.statHeading}>TEAM</Text>
-          <Text style={styles.statTxt}>{stats[3]}</Text>
+          <Text style={styles.statTxt}>{player[4]}</Text>
         </View>
       </ScrollView>
     </SafeAreaView>

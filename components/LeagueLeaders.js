@@ -22,7 +22,7 @@ const LeagueLeaders = ({ rank }) => {
 
   if (isLoading) {
     console.log("loading");
-    return <Text>Loading...</Text>;
+    return;
   }
 
   if (isError) {

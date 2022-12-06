@@ -133,7 +133,6 @@ const styles = StyleSheet.create({
   },
 
   statHeading: {
-    textDecorationLine: "underline",
     fontWeight: "500",
     color: "white",
     ...Platform.select({
@@ -159,26 +158,11 @@ const styles = StyleSheet.create({
     marginLeft: 30,
     marginRight: 30,
     backgroundColor: "rgba(0, 0, 0, 0.7)",
-    ...Platform.select({
-      ios: {},
-      android: {},
-      default: {
-        marginLeft: 200,
-        marginRight: 200,
-      },
-    }),
   },
 
   tableColumn: {
     marginLeft: 25,
     marginTop: 5,
     marginBottom: 5,
-    ...Platform.select({
-      ios: {},
-      android: {},
-      default: {
-        marginLeft: 50,
-      },
-    }),
   },
 });

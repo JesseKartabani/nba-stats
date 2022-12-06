@@ -31,7 +31,7 @@ export default Banner;
 const styles = StyleSheet.create({
   heading: {
     fontWeight: "700",
-    alignSelf: "center",
+    textAlign: "center",
     fontSize: "17%",
     marginTop: 1,
     marginBottom: 1,

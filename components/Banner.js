@@ -9,12 +9,7 @@ const Banner = () => {
   return (
     <SafeAreaView>
       {/* Banner image */}
-      <Image
-        style={styles.banner}
-        source={{
-          uri: "https://i.imgur.com/hMyneZs.png",
-        }}
-      />
+      <Image style={styles.banner} source={require("../assets/banner.png")} />
 
       {/* Heading changes depending on screen */}
       <Text style={styles.heading}>

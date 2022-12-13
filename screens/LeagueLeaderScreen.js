@@ -8,7 +8,7 @@ const LeagueLeaderScreen = () => {
   return (
     <ImageBackground
       style={styles.backgroundImg}
-      source={{ uri: "https://i.imgur.com/Fw7YF2Q.jpg" }}
+      source={require("../assets/background.jpg")}
     >
       <Banner />
       <NavOptions />

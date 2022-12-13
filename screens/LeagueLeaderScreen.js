@@ -1,14 +1,17 @@
 import { ImageBackground, ScrollView, StyleSheet } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import Banner from "../components/Banner";
 import LeagueLeaders from "../components/LeagueLeaders";
 import NavOptions from "../components/NavOptions";
 
 const LeagueLeaderScreen = () => {
+  const [blur, setBlur] = useState([20]);
   return (
     <ImageBackground
       style={styles.backgroundImg}
       source={require("../assets/background.jpg")}
+      blurRadius={blur}
+      onLoadEnd={() => setBlur(0)}
     >
       <Banner />
       <NavOptions />
